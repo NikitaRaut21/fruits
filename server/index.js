@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from 'cors'
 import dotenv from 'dotenv'
 dotenv.config()
+
 const app = express ();
 app.use(express.json());
 app.use(cors());
@@ -17,9 +18,10 @@ const connectDB =async ()=>{
 
  app.get('/',(req,res)=>{
     res.json({
-     message:`welcome to expense tracker API`
+     message:`welcome to fruits API`
     })
  })
+ 
 
  const PORT = process.env.PORT || 5000;
   app.listen (PORT,(req,res)=>{

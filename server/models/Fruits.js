@@ -1,6 +1,6 @@
 import { Schema, Types, model } from "mongoose";
 
-const transactionSchema = new Schema({
+const fruitSchema = new Schema({
     title:{
      type:String,
      required:true
@@ -15,17 +15,17 @@ const transactionSchema = new Schema({
         required: true, // Changed to boolean
         default: "others" // Added default value for 'others'
     },
-      protein:{
-      type:String,
-      required:true,
+    protein:{
+    type:String,
+    required:true,
     },
     type: {
         type: String,
-        required: true,
+      enum:["debit","credit"]
         
     },
     user: {
-        type: Types.ObjectId, // Corrected the way to access ObjectId
+        type: Schema.Types.ObjectId, // Corrected the way to access ObjectId
         ref: "User",
         required: true,
     }
@@ -33,6 +33,6 @@ const transactionSchema = new Schema({
     timestamps: true,
 });
 
-const Transaction = model("Transaction", transactionSchema);
+const fruit = model("fruit", fruitSchema);
 
-export default Transaction;
+export default fruit;
