@@ -13,16 +13,21 @@ const fruitSchema = new Schema({
     category: {
         type: String,
         required: true, // Changed to boolean
-        default: "others" // Added default value for 'others'
+    
     },
     protein:{
     type:String,
     required:true,
     },
-    type: {
+    calories:{
+        type:Number,
+        required:true,
+    
+        },
+   type: {
         type: String,
-      enum:["debit","credit"]
-        
+        required: true,
+        enum: ["debit", "credit"],
     },
     user: {
         type: Schema.Types.ObjectId, // Corrected the way to access ObjectId
